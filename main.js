@@ -6,7 +6,7 @@ var Random = require('random-js'),
 var filenames=[];
 const glob = require('glob');
 var files=[];
-files=glob.sync('/home/bhavya/Test/Fuzzing/*.md');
+files=glob.sync('/home/vagrant/iTrust2-v4/iTrust2/src/main/java/edu/ncsu/csc/itrust2/*.java');
 console.log(files);
 
 var fuzzer = 
