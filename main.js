@@ -125,8 +125,6 @@ for( var i =0; i < failedTests.length; i++ )
     }
 }
 
-console.log( "passed {0}, failed {1}, reduced {2}".format(passedTests, failedTests.length, reducedTests.length) );
-
 for( var key in reduced )
 {
     console.log( reduced[key] );
