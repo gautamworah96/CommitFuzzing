@@ -109,7 +109,7 @@ function mutationTesting(paths,iterations)
             failedTests.push( {input:mutuatedString, stack: e.stack} );
         }
 
-        fs.writeFileSync(paths[filenum],mutuatedString,'utf-8');
+        fs.writeFileSync(paths[filenum],mutuatedString+" ",'utf-8');
     }
 reduced = {};
 // RESULTS OF FUZZING
