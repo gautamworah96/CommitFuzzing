@@ -20,57 +20,58 @@ var data = fs.readFileSync(filename, 'utf8');
 var lines = data.split("\n");
 console.log(lines);
 
-for (var i=0;i<lines.length;i++){
-    prob=Math.random();
-    if (prob>0.2){
-        if(lines[i].match('while') || lines[i].match('for') || lines[i].match('if'))
-                {
+// for (var i=0;i<lines.length;i++){
+//     prob=Math.random();
+//     if (prob>0.2){
+//         if(lines[i].match('while') || lines[i].match('for') || lines[i].match('if'))
+//                 {
                     
-                    if(lines[i].match('<')){
-                    lines[i]=lines[i].replace('<', '>');
-                    console.log("replaced"+lines[i]);
-                    }
-                    else if(lines[i].match('>') && !lines[i].match('->')){
-                    lines[i]=lines[i].replace('>', '<');
-                    }
+//                     if(lines[i].match('<')){
+//                     lines[i]=lines[i].replace('<', '>');
+//                     console.log("replaced"+lines[i]);
+//                     }
+//                     else if(lines[i].match('>') && !lines[i].match('->')){
+//                     lines[i]=lines[i].replace('>', '<');
+//                     }
         
-                }
-                }
-    if (prob>0.3){
-        if(lines[i].match('==')){
-            lines[i]=lines[i].replace(/==/g,'!=');}
-        else if(lines[i].match('!=')){
-            lines[i]=lines[i].replace(/!=/g,'==');}
-        }
-    if (prob>0.4){
-        if((lines[i].match('while') || lines[i].match('for') || lines[i].match('if')) && lines[i].match(/[0]/))
-              {
-                lines[i]=lines[i].replace(/[0]/g,"1");
-              }
-              else if((lines[i].match('while') || lines[i].match('for') || lines[i].match('if')) && lines[i].match('1'))
-              { 
-                  lines[i]=lines[i].replace(/[1]/g,'0');
-              }
-    }
-    if (prob>0.25){
-        var regMatch = lines[i].match('"(.*?)"');
-        if (regMatch!=null)
-                    {
-                        lines[i]=lines[i].replace(regMatch[1],mutateliteralstr(10));
-                    }
-    }
-    if (prob>0.5){
-        if(lines[i].match('true')){
-            lines[i]=lines[i].replace('true', 'false');
-          }
-        else if(lines[i].match('false')){
+//                 }
+//                 }
+//     if (prob>0.3){
+//         if(lines[i].match('==')){
+//             lines[i]=lines[i].replace(/==/g,'!=');}
+//         else if(lines[i].match('!=')){
+//             lines[i]=lines[i].replace(/!=/g,'==');}
+//         }
+//     if (prob>0.4){
+//         if((lines[i].match('while') || lines[i].match('for') || lines[i].match('if')) && lines[i].match(/[0]/))
+//               {
+//                 lines[i]=lines[i].replace(/[0]/g,"1");
+//               }
+//               else if((lines[i].match('while') || lines[i].match('for') || lines[i].match('if')) && lines[i].match('1'))
+//               { 
+//                   lines[i]=lines[i].replace(/[1]/g,'0');
+//               }
+//     }
+//     if (prob>0.25){
+//         var regMatch = lines[i].match('"(.*?)"');
+//         if (regMatch!=null)
+//                     {
+//                         lines[i]=lines[i].replace(regMatch[1],mutateliteralstr(10));
+//                     }
+//     }
+//     if (prob>0.5){
+//         if(lines[i].match('true')){
+//             lines[i]=lines[i].replace('true', 'false');
+//           }
+//         else if(lines[i].match('false')){
             
-              lines[i]=lines[i].replace('false', 'true');
-            }
+//               lines[i]=lines[i].replace('false', 'true');
+//             }
         
-    }
+//     }
 
-}
+// }
+
 function mutateliteralstr(length)
 {
     var text = "";
