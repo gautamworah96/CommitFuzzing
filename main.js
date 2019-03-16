@@ -82,7 +82,7 @@ function mutateliteralstr(length)
 }
             
 console.log(lines);
-fs.writeFileSync(filename,lines+" ",'utf-8');
+fs.writeFileSync(filename,lines.join('\n')+" ",'utf-8');
     
 
 
